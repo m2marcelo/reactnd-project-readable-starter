@@ -1,15 +1,9 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {sortPosts} from '../../actions/posts';
-import { SORT_POSTS_BY } from '../../constants';
+import { SORT_POSTS_BY, POSTS_SORTING_LABELS } from '../../constants';
 
 import './index.css';
-
-export const LABEL = {
-  voteScore: 'Top',
-  comments: 'Popular',
-  timestamp: 'New'
-}
 
 const SortPostsOptions = ({activeSort, sortPosts}) => {
   const buttons = Object.values(SORT_POSTS_BY).map((sortKey) => {
@@ -21,7 +15,7 @@ const SortPostsOptions = ({activeSort, sortPosts}) => {
               sortPosts(sortKey)
             }
           }
-        >{LABEL[sortKey]}</button>
+        >{POSTS_SORTING_LABELS[sortKey]}</button>
       </li>
     );
   })

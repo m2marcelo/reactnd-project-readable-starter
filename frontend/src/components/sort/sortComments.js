@@ -1,12 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {sortComments} from '../../actions/comments';
-import { SORT_COMMENTS_BY } from '../../constants';
-
-export const LABEL = {
-  voteScore: 'Top',
-  timestamp: 'New'
-}
+import { SORT_COMMENTS_BY, COMMENTS_SORTING_LABELS } from '../../constants';
 
 const SortCommentsOptions = ({activeSort, sortComments}) => {
   const buttons = Object.values(SORT_COMMENTS_BY).map((sortKey) => {
@@ -18,7 +13,7 @@ const SortCommentsOptions = ({activeSort, sortComments}) => {
               sortComments(sortKey)
             }
           }
-        >{LABEL[sortKey]}</button>
+        >{COMMENTS_SORTING_LABELS[sortKey]}</button>
       </li>
     );
   })
@@ -26,7 +21,7 @@ const SortCommentsOptions = ({activeSort, sortComments}) => {
   return (
     <ul className='Sort'>
       <li key='plain' className='Sort-comments'>
-        Sort comments
+        Show comments order:
       </li>
 
       {buttons}

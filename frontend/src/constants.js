@@ -28,9 +28,20 @@ export const SORT_POSTS_BY = {
   DATE: 'timestamp'
 }
 
+export const POSTS_SORTING_LABELS = {
+  voteScore: 'By score',
+  comments: 'By comments',
+  timestamp: 'By date'
+}
+
 export const SORT_COMMENTS_BY = {
   VOTES: 'voteScore',
   DATE: 'timestamp'
+}
+
+export const COMMENTS_SORTING_LABELS = {
+  voteScore: 'By score',
+  timestamp: 'By date'
 }
 
 export const VOTE = {
