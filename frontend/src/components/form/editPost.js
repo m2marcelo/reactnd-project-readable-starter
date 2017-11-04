@@ -7,7 +7,7 @@ import {getCategories} from '../../actions/categories';
 import {fetchPosts, savePost, editPost} from '../../actions/posts';
 import Loading from '../loading';
 
-class PostEdition extends Component {
+class EditPost extends Component {
   componentDidMount () {
     const {categories, posts, getCategories, fetchPosts} = this.props;
     const fetchedCategories = categories && categories.fetched;
@@ -93,4 +93,4 @@ export default connect(mapStateToProps,
     fetchPosts,
     savePost,
     editPost
- })(PostEdition);
+ })(EditPost);

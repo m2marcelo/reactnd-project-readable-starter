@@ -6,7 +6,7 @@ import CommentForm from './commentForm';
 import {fetchPosts} from '../../actions/posts';
 import { getComments, saveComment, editComment } from '../../actions/comments';
 
-class CommentEdition extends Component {
+class EditComment extends Component {
   componentDidMount () {
     const {posts, comments, fetchPosts, getComments} = this.props;
     const postID = this.getPostID();
@@ -101,4 +101,4 @@ export default connect(
     saveComment,
     editComment
   }
-)(CommentEdition);
+)(EditComment);

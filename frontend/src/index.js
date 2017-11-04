@@ -8,7 +8,7 @@ import promise from "redux-promise";
 
 import reducers from "./reducers";
 import PostList from './components/postList';
-import {PostEdition, CommentEdition} from './components/form';
+import { EditPost, EditComment } from './components/form';
 import PostDetail from './components/postDetail';
 import NotFound from './components/notFound';
 import Header from './components/header';
@@ -26,10 +26,10 @@ ReactDOM.render(
         <Switch className="Content">
           <Route path='/' exact component={PostList} />
           <Route path='/category/:category' component={PostList} />
-          <Route path='/:category/:post/comment/:comment/edit' component={CommentEdition} />
-          <Route path='/:category/:post/comment/new' component={CommentEdition} />
-          <Route path='/:category/:post/edit' component={PostEdition} />
-          <Route path='/:category/new' exact component={PostEdition} />
+          <Route path='/:category/:post/comment/:comment/edit' component={EditComment} />
+          <Route path='/:category/:post/comment/new' component={EditComment} />
+          <Route path='/:category/:post/edit' component={EditPost} />
+          <Route path='/:category/new' exact component={EditPost} />
           <Route path='/:category/:post' component={PostDetail} />
           <Route component={NotFound}/>
         </Switch>

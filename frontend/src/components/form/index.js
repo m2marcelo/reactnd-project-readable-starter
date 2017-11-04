@@ -1,6 +1,6 @@
-import CommentEdition from './commentEdition';
-import PostEdition from './postEdition';
+import EditComment from './editComment';
+import EditPost from './editPost';
 
 import './form.css';
 
-export {CommentEdition, PostEdition};
+export {EditComment, EditPost};
