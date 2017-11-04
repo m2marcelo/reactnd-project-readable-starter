@@ -1,6 +1,6 @@
 import EditComment from './editComment';
 import EditPost from './editPost';
 
-import './form.css';
+import './index.css';
 
 export {EditComment, EditPost};
