@@ -1,22 +1,46 @@
-# Readable API Server
+# Marcelo Readable project for Udacity nanodegree
 
-This is the starter project for the final assessment project for Udacity's Redux course where you will build a content and comment web app. Users will be able to post content to predefined categories, comment on their posts and other users' posts, and vote on posts and comments. Users will also be able to edit and delete posts and comments.
+## Server
+Based on the server recommended by udacity:
+https://github.com/udacity/reactnd-project-readable-starter
 
-This repository includes the code for the backend API Server that you'll use to develop and interact with the front-end portion of the project.
+## Client
 
-## Start Developing
+This is a content and comment web app. Users will be able to post content to predefined categories, comment on their posts and other users' posts, and vote on posts and comments. Users will also be able to edit and delete posts and comments.
 
-To get started developing right away:
+## Installation and running steps
 
-* Install and start the API server
-    - `cd api-server`
-    - `npm install`
-    - `node server`
-* In another terminal window, use Create React App to scaffold out the front-end
-    - `create-react-app frontend`
-    - `cd frontend`
-    - `npm start`
+First of all you will need two separated terminals to run the project, one to run the server and another to run the front end.
 
-## API Server
+But before running you will need to install the dependencies:
 
-Information about the API server and how to use it can be found in its [README file](api-server/README.md).
+Go to the project folder, then install what is needed for each folder.
+For the server:
+
+```
+cd api-server/
+yarn (or npm install)
+```
+
+Go back to project root folder, then go to the frontend folder:
+
+```
+cd frontend/
+yarn (or npm install)
+```
+
+To run:
+
+Launch first the server in one terminal, go to the server folder then:
+
+```
+  node server.js
+```
+
+Then launch the fronted in another terminal, go to the frontedn folder then:
+
+```
+  yarn start
+```
+
+This will open your browser and go to the fronted project  `http://localhost:3000`.

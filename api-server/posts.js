@@ -22,6 +22,16 @@ const defaultData = {
     category: 'redux',
     voteScore: -5,
     deleted: false
+  },
+  "0a9sv0asd09f8a09as8f": {
+    id: '0a9sv0asd09f8a09as8f',
+    timestamp: 1469479767695,
+    title: 'I like to make jokes!',
+    body: 'Just kidding. I MAKE JOKE ALL THE TIME!',
+    author: 'funny guy',
+    category: 'funny stuff',
+    voteScore: 2,
+    deleted: false
   }
 }
 

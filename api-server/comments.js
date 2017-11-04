@@ -9,7 +9,7 @@ const defaultData = {
     timestamp: 1468166872634,
     body: 'Hi there! I am a COMMENT.',
     author: 'thingtwo',
-    voteScore: 6,
+    voteScore: 3,
     deleted: false,
     parentDeleted: false
   },
@@ -19,7 +19,7 @@ const defaultData = {
     timestamp: 1469479767190,
     body: 'Comments. Are. Cool.',
     author: 'thingone',
-    voteScore: -5,
+    voteScore: 3,
     deleted: false,
     parentDeleted: false
   }
