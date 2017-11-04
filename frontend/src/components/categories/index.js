@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
-import {Link} from 'react-router-dom';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import './index.css';
 
@@ -13,11 +13,11 @@ class Categories extends Component {
     !fetched && getCategories();
   }
 
-  renderCategory (name, path) {
+  showCategory (name, path) {
     const current = this.props.category;
     const category = `${name.substring(0, 1).toUpperCase()}${name.substring(1)}`;
 
-    const css = current === name ? 'is-active' : '';
+    const css = current === name ? 'enabled' : '';
     return (
       <li key={name}>
         <Link className={css} to={path}>{category}</Link>
@@ -25,11 +25,11 @@ class Categories extends Component {
     );
   }
 
-  renderCategories (categories) {
+  showCategoryData (categories) {
     return categories.map((category) => {
       const path = `/category/${category.path}`;
       const {name} = category;
-      return this.renderCategory(name, path);
+      return this.showCategory(name, path);
     });
   }
 
@@ -43,8 +43,8 @@ class Categories extends Component {
 
     return (
       <ul className='Categories'>
-        {this.renderCategory('all', '')}
-        {this.renderCategories(categories.data)}
+        {this.showCategory('all', '')}
+        {this.showCategoryData(categories.data)}
       </ul>
     );
   }

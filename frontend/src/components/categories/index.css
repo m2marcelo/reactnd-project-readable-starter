@@ -12,6 +12,6 @@
   color: #ddd;
 }
 
-.Categories a.is-active {
+.Categories a.enabled {
   color: #444;
 }
