@@ -170,4 +170,9 @@ const mapStateToProps = ({comments, posts}) => {
   return { comments, posts };
 }
 
-export default connect(mapStateToProps, { getComments, fetchPosts, votePost, deletePost })(PostDetail);
+export default connect(mapStateToProps, {
+    fetchPosts,
+    votePost,
+    getComments,
+    deletePost
+  })(PostDetail);

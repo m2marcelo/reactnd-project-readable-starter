@@ -43,7 +43,7 @@ class PostList extends Component {
 
     if (posts.length === 0) {
       return (
-        <div className='No-posts'>There is no post yet in <span>{category}</span> category.</div>
+        <div className='No-posts'>No post in <span>{category}</span> yet, you can be the first one!</div>
       );
     }
 
