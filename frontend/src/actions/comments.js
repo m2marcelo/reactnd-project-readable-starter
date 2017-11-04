@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { URL, APIKEY } from '../config';
+import { URL, AUTH } from '../constants';
 import { uuidv4 } from '../helpers';
 
 import {
@@ -17,7 +17,7 @@ import {
 export function fetchComments (postID) {
   const url = `${URL}/posts/${postID}/comments`;
   const config = {
-    headers: {'Authorization': APIKEY}
+    headers: {'Authorization': AUTH}
   }
 
   const request = axios.get(url, config)
@@ -46,7 +46,7 @@ export function sortComments (byKey) {
 export function voteComment (postID, commentID, option) {
   const url = `${URL}/comments/${commentID}`;
   const config = {
-    headers: {'Authorization': APIKEY}
+    headers: {'Authorization': AUTH}
   }
 
   const data = {
@@ -67,7 +67,7 @@ export function voteComment (postID, commentID, option) {
 export function deleteComment (postID, commentID) {
   const url = `${URL}/comments/${commentID}`;
   const config = {
-    headers: {'Authorization': APIKEY}
+    headers: {'Authorization': AUTH}
   }
 
   axios.delete(url, config);
@@ -84,7 +84,7 @@ export function deleteComment (postID, commentID) {
 export function saveComment (postID, values, callback) {
   const url = `${URL}/comments`;
   const config = {
-    headers: {'Authorization': APIKEY}
+    headers: {'Authorization': AUTH}
   }
   const metadata = {
     id: uuidv4(),
@@ -109,7 +109,7 @@ export function saveComment (postID, values, callback) {
 export function updateComment (commentID, values, callback) {
   const url = `${URL}/comments/${commentID}`;
   const config = {
-    headers: {'Authorization': APIKEY}
+    headers: {'Authorization': AUTH}
   }
   const metadata = {
     timestamp: Date.now()

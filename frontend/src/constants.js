@@ -1,3 +1,6 @@
+export const URL = 'http://localhost:5001';
+export const AUTH = 'marcelo';
+
 export const FETCH_CATEGORIES = 'fetchCategories';
 export const FETCH_POSTS = 'fetchPosts';
 export const SORT_POSTS = 'sortPosts';

@@ -1,12 +1,11 @@
 import axios from 'axios';
 
-import { URL, APIKEY } from '../config';
-import { FETCH_CATEGORIES } from '../constants';
+import { FETCH_CATEGORIES, URL, AUTH } from '../constants';
 
 export function fetchCategories () {
   const url = `${URL}/categories`;
   const config = {
-    headers: {'Authorization': APIKEY}
+    headers: {'Authorization': AUTH}
   }
 
   const request = axios.get(url, config);

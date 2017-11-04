@@ -1,9 +1,10 @@
 import axios from 'axios';
 
-import {URL, APIKEY} from '../config';
-import {uuidv4} from '../helpers';
+import { uuidv4 } from '../helpers';
 
 import {
+  URL,
+  AUTH,
   FETCH_POSTS,
   SORT_POSTS,
   DOWN_VOTE_POST,
@@ -17,7 +18,7 @@ import {
 export function fetchPosts () {
   const postUrl = `${URL}/posts`;
   const config = {
-    headers: {'Authorization': APIKEY}
+    headers: {'Authorization': AUTH}
   }
 
   let postsWithComments;
@@ -67,7 +68,7 @@ export function sortPosts (byKey) {
 export function votePost (postID, option) {
   const url = `${URL}/posts/${postID}`;
   const config = {
-    headers: {'Authorization': APIKEY}
+    headers: {'Authorization': AUTH}
   }
 
   const data = {
@@ -85,7 +86,7 @@ export function votePost (postID, option) {
 export function deletePost (postID, callback) {
   const url = `${URL}/posts/${postID}`;
   const config = {
-    headers: {'Authorization': APIKEY}
+    headers: {'Authorization': AUTH}
   }
 
   axios.delete(url, config)
@@ -100,7 +101,7 @@ export function deletePost (postID, callback) {
 export function savePost (values, callback) {
   const url = `${URL}/posts`;
   const config = {
-    headers: {'Authorization': APIKEY}
+    headers: {'Authorization': AUTH}
   }
   const metadata = {
     id: uuidv4(),
@@ -123,7 +124,7 @@ export function savePost (values, callback) {
 export function updatePost (postID, values, callback) {
   const url = `${URL}/posts/${postID}`;
   const config = {
-    headers: {'Authorization': APIKEY}
+    headers: {'Authorization': AUTH}
   }
   const metadata = {
     id: postID
