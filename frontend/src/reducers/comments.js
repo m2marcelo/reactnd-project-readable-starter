@@ -2,11 +2,11 @@ import {
   SORT_POSTS_BY,
   GET_COMMENTS,
   SORT_COMMENTS,
-  UP_VOTE_COMMENT,
-  DOWN_VOTE_COMMENT,
+  LIKE_COMMENT,
+  DISLIKE_COMMENT,
   DELETE_COMMENT,
   NEW_COMMENT,
-  UPDATE_COMMENT
+  EDIT_COMMENT
 } from '../constants';
 
 const initialState = {
@@ -31,7 +31,31 @@ export default function (state = initialState, action) {
       sort: action.payload
     }
 
-  case UP_VOTE_COMMENT:
+    case DELETE_COMMENT:
+      data = {
+        ...state.data
+      }
+
+      delete data[action.meta.post][action.payload];
+
+      return {
+        ...state,
+        data
+      }
+
+    case NEW_COMMENT:
+      data = {
+        ...state.data
+      }
+
+      data[action.payload.parentId][action.payload.id] = action.payload;
+
+      return {
+        ...state,
+        data
+      }
+
+  case LIKE_COMMENT:
     data = {
       ...state.data
     }
@@ -43,7 +67,7 @@ export default function (state = initialState, action) {
       data
     }
 
-  case DOWN_VOTE_COMMENT:
+  case DISLIKE_COMMENT:
     data = {
       ...state.data
     }
@@ -55,31 +79,7 @@ export default function (state = initialState, action) {
       data
     }
 
-  case DELETE_COMMENT:
-    data = {
-      ...state.data
-    }
-
-    delete data[action.meta.post][action.payload];
-
-    return {
-      ...state,
-      data
-    }
-
-  case NEW_COMMENT:
-    data = {
-      ...state.data
-    }
-
-    data[action.payload.parentId][action.payload.id] = action.payload;
-
-    return {
-      ...state,
-      data
-    }
-
-  case UPDATE_COMMENT:
+  case EDIT_COMMENT:
     data = {
       ...state.data
     }

@@ -6,11 +6,11 @@ import { uuidv4 } from '../helpers';
 import {
   GET_COMMENTS,
   SORT_COMMENTS,
-  DOWN_VOTE_COMMENT,
-  UP_VOTE_COMMENT,
+  DISLIKE_COMMENT,
+  LIKE_COMMENT,
   DELETE_COMMENT,
   NEW_COMMENT,
-  UPDATE_COMMENT,
+  EDIT_COMMENT,
   VOTE,
 } from '../constants';
 
@@ -49,7 +49,7 @@ export function voteComment (postID, commentID, option) {
   axios.post(url, data, config);
 
   return {
-    type: option === VOTE.UP ? UP_VOTE_COMMENT : DOWN_VOTE_COMMENT,
+    type: option === VOTE.UP ? LIKE_COMMENT : DISLIKE_COMMENT,
     payload: commentID,
     meta: {
       post: postID
@@ -105,7 +105,7 @@ export function saveComment (postID, values, callback) {
  }
 }
 
-export function updateComment (commentID, values, callback) {
+export function editComment (commentID, values, callback) {
   const url = `${URL}/comments/${commentID}`;
   const config = {
     headers: {'Authorization': AUTH}
@@ -122,7 +122,7 @@ export function updateComment (commentID, values, callback) {
     .then(() => callback());
 
   return {
-    type: UPDATE_COMMENT,
+    type: EDIT_COMMENT,
     payload: data
   }
 }

@@ -7,7 +7,7 @@ import {
   DELETE_POST,
   DELETE_COMMENT,
   NEW_POST,
-  UPDATE_POST,
+  EDIT_POST,
   NEW_COMMENT
 } from '../constants';
 
@@ -97,7 +97,7 @@ export default function (state = initialState, action) {
       data
     }
 
-  case UPDATE_POST:
+  case EDIT_POST:
     data = {
       ...state.data
     }

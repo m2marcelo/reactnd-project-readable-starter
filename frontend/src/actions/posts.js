@@ -10,7 +10,7 @@ import {
   DISLIKE_POST,
   LIKE_POST,
   VOTE,
-  UPDATE_POST,
+  EDIT_POST,
   NEW_POST,
   DELETE_POST
 } from '../constants';
@@ -121,7 +121,7 @@ export function sortPosts (desiredOrder) {
   }
 }
 
-export function updatePost (postID, values, callback) {
+export function editPost (postID, values, callback) {
   const url = `${URL}/posts/${postID}`;
   const config = {
     headers: {'Authorization': AUTH}
@@ -138,7 +138,7 @@ export function updatePost (postID, values, callback) {
     .then(() => callback());
 
   return {
-    type: UPDATE_POST,
+    type: EDIT_POST,
     payload: data
   }
 }

@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 
 import CommentForm from './commentForm';
 import {fetchPosts} from '../../actions/posts';
-import { getComments, saveComment, updateComment } from '../../actions/comments';
+import { getComments, saveComment, editComment } from '../../actions/comments';
 
 class CommentEdition extends Component {
   componentDidMount () {
@@ -39,9 +39,9 @@ class CommentEdition extends Component {
     const post = this.getPostID();
     const comment = this.getCommentID();
 
-    const {saveComment, updateComment, history} = this.props;
+    const {saveComment, editComment, history} = this.props;
     if (comment) {
-      updateComment(comment, values, () => {
+      editComment(comment, values, () => {
         history.push(`/post/${post}`);
       });
     } else {
@@ -99,6 +99,6 @@ export default connect(
     getComments,
     fetchPosts,
     saveComment,
-    updateComment
+    editComment
   }
 )(CommentEdition);

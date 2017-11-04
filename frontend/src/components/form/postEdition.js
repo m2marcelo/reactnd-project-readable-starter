@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 
 import PostForm from './postForm';
 import {getCategories} from '../../actions/categories';
-import {fetchPosts, savePost, updatePost} from '../../actions/posts';
+import {fetchPosts, savePost, editPost} from '../../actions/posts';
 import Loading from '../loading';
 
 class PostEdition extends Component {
@@ -18,9 +18,9 @@ class PostEdition extends Component {
 
   submit = (values) => {
     const post = this.getPostID();
-    const {savePost, updatePost, history} = this.props;
+    const {savePost, editPost, history} = this.props;
     if (post) {
-      updatePost(post, values, () => {
+      editPost(post, values, () => {
         history.push(`/post/${post}`);
      });
     } else {
@@ -92,5 +92,5 @@ export default connect(mapStateToProps,
     getCategories,
     fetchPosts,
     savePost,
-    updatePost
+    editPost
  })(PostEdition);
