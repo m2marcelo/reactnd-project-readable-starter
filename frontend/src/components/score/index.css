@@ -21,7 +21,6 @@
 }
 
 .Score-button::after {
-  border-style: solid;
   content: '';
   display: block;
   height: 0;
@@ -33,7 +32,8 @@
 }
 
 .Score-button--up {
-  background-color: #0000ff;
+  background-image: url( './up.svg' );
+
 }
 
 .Score-button--up::after {
@@ -42,7 +42,7 @@
 }
 
 .Score-button--down {
-  background-color: #FFF;
+  background-image: url( './down.svg' );
 }
 
 .Score-button--down::after {
