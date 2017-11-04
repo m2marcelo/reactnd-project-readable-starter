@@ -36,13 +36,6 @@ export function getComments (postID) {
   }
 }
 
-export function sortComments (byKey) {
-  return {
-    type: SORT_COMMENTS,
-    payload: byKey
-  }
-}
-
 export function voteComment (postID, commentID, option) {
   const url = `${URL}/comments/${commentID}`;
   const config = {
@@ -61,6 +54,12 @@ export function voteComment (postID, commentID, option) {
     meta: {
       post: postID
     }
+  }
+}
+export function sortComments (desiredOrder) {
+  return {
+    type: SORT_COMMENTS,
+    payload: desiredOrder
   }
 }
 

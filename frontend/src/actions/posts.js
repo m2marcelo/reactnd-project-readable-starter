@@ -58,13 +58,6 @@ export function fetchPosts () {
   }
 }
 
-export function sortPosts (byKey) {
-  return {
-    type: SORT_POSTS,
-    payload: byKey
-  }
-}
-
 export function votePost (postID, option) {
   const url = `${URL}/posts/${postID}`;
   const config = {
@@ -118,6 +111,13 @@ export function savePost (values, callback) {
   return {
     type: NEW_POST,
     payload: data
+  }
+}
+
+export function sortPosts (desiredOrder) {
+  return {
+    type: SORT_POSTS,
+    payload: desiredOrder
   }
 }
 
