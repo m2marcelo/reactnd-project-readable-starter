@@ -7,8 +7,8 @@ import {
   AUTH,
   FETCH_POSTS,
   SORT_POSTS,
-  DOWN_VOTE_POST,
-  UP_VOTE_POST,
+  DISLIKE_POST,
+  LIKE_POST,
   VOTE,
   UPDATE_POST,
   NEW_POST,
@@ -71,7 +71,7 @@ export function votePost (postID, option) {
   axios.post(url, data, config);
 
   return {
-    type: option === VOTE.UP ? UP_VOTE_POST : DOWN_VOTE_POST,
+    type: option === VOTE.UP ? LIKE_POST : DISLIKE_POST,
     payload: postID
   }
 }

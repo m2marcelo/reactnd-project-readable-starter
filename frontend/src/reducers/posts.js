@@ -2,8 +2,8 @@ import {
   SORT_POSTS_BY,
   FETCH_POSTS,
   SORT_POSTS,
-  UP_VOTE_POST,
-  DOWN_VOTE_POST,
+  LIKE_POST,
+  DISLIKE_POST,
   DELETE_POST,
   DELETE_COMMENT,
   NEW_POST,
@@ -33,7 +33,7 @@ export default function (state = initialState, action) {
       sort: action.payload
     }
 
-  case UP_VOTE_POST:
+  case LIKE_POST:
     data = {
       ...state.data
     }
@@ -44,7 +44,7 @@ export default function (state = initialState, action) {
       data
     }
 
-  case DOWN_VOTE_POST:
+  case DISLIKE_POST:
     data = {
       ...state.data
     }
