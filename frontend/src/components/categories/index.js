@@ -4,13 +4,13 @@ import {Link} from 'react-router-dom';
 
 import './index.css';
 
-import {fetchCategories} from '../../actions/categories';
+import { getCategories } from '../../actions/categories';
 
 class Categories extends Component {
   componentDidMount () {
-    const {categories, fetchCategories} = this.props;
+    const {categories, getCategories} = this.props;
     const fetched = categories && categories.fetched;
-    !fetched && fetchCategories();
+    !fetched && getCategories();
   }
 
   renderCategory (name, path) {
@@ -54,4 +54,4 @@ const mapStateToPros = ({categories}) => {
   return { categories };
 }
 
-export default connect(mapStateToPros, {fetchCategories})(Categories);
+export default connect(mapStateToPros, {getCategories})(Categories);

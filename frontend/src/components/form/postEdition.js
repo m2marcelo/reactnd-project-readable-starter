@@ -3,16 +3,16 @@ import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 
 import PostForm from './postForm';
-import {fetchCategories} from '../../actions/categories';
+import {getCategories} from '../../actions/categories';
 import {fetchPosts, savePost, updatePost} from '../../actions/posts';
 import Loading from '../loading';
 
 class PostEdition extends Component {
   componentDidMount () {
-    const {categories, posts, fetchCategories, fetchPosts} = this.props;
+    const {categories, posts, getCategories, fetchPosts} = this.props;
     const fetchedCategories = categories && categories.fetched;
     const fetchedPosts = posts && posts.fetched;
-    !fetchedCategories && fetchCategories();
+    !fetchedCategories && getCategories();
     !fetchedPosts && fetchPosts();
   }
 
@@ -89,7 +89,7 @@ const mapStateToProps = ({categories, posts}) => {
 
 export default connect(mapStateToProps,
   {
-    fetchCategories,
+    getCategories,
     fetchPosts,
     savePost,
     updatePost

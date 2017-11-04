@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-import { FETCH_CATEGORIES, URL, AUTH } from '../constants';
+import { GET_CATEGORIES, URL, AUTH } from '../constants';
 
-export function fetchCategories () {
+export function getCategories () {
   const url = `${URL}/categories`;
   const config = {
     headers: {'Authorization': AUTH}
@@ -11,7 +11,7 @@ export function fetchCategories () {
   const request = axios.get(url, config);
 
   return {
-    type: FETCH_CATEGORIES,
+    type: GET_CATEGORIES,
     payload: request
   }
 }

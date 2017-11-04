@@ -1,13 +1,13 @@
 export const URL = 'http://localhost:5001';
 export const AUTH = 'marcelo';
 
-export const FETCH_CATEGORIES = 'fetchCategories';
+export const GET_CATEGORIES = 'getCategories';
 export const FETCH_POSTS = 'fetchPosts';
 export const SORT_POSTS = 'sortPosts';
 export const UP_VOTE_POST = 'upVotePost';
 export const DOWN_VOTE_POST = 'downVotePost';
 export const DELETE_POST = 'deletePost';
-export const FETCH_COMMENTS = 'fetchComments';
+export const GET_COMMENTS = 'getComments';
 export const SORT_COMMENTS = 'sortComments';
 export const UP_VOTE_COMMENT = 'upVoteComment';
 export const DOWN_VOTE_COMMENT = 'downVoteComment';

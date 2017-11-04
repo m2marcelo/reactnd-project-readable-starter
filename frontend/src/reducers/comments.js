@@ -1,6 +1,6 @@
 import {
   SORT_POSTS_BY,
-  FETCH_COMMENTS,
+  GET_COMMENTS,
   SORT_COMMENTS,
   UP_VOTE_COMMENT,
   DOWN_VOTE_COMMENT,
@@ -18,7 +18,7 @@ export default function (state = initialState, action) {
   let data;
 
   switch (action.type) {
-  case FETCH_COMMENTS:
+  case GET_COMMENTS:
     return {
       ...state,
       fetched: true,

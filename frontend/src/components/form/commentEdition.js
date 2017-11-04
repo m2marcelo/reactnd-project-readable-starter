@@ -4,11 +4,11 @@ import {Link} from 'react-router-dom';
 
 import CommentForm from './commentForm';
 import {fetchPosts} from '../../actions/posts';
-import {fetchComments, saveComment, updateComment} from '../../actions/comments';
+import { getComments, saveComment, updateComment } from '../../actions/comments';
 
 class CommentEdition extends Component {
   componentDidMount () {
-    const {posts, comments, fetchPosts, fetchComments} = this.props;
+    const {posts, comments, fetchPosts, getComments} = this.props;
     const postID = this.getPostID();
 
     if (!posts || !posts.fetched) {
@@ -16,7 +16,7 @@ class CommentEdition extends Component {
     }
 
     if (!comments || !comments.fetched) {
-      fetchComments(postID);
+      getComments(postID);
     }
   }
 
@@ -96,7 +96,7 @@ const mapStateToProps = ({comments, posts}) => {
 export default connect(
   mapStateToProps,
   {
-    fetchComments,
+    getComments,
     fetchPosts,
     saveComment,
     updateComment

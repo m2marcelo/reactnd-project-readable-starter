@@ -3,8 +3,8 @@ import {connect} from 'react-redux';
 import format from 'date-fns/format';
 import {Link, Redirect} from 'react-router-dom';
 
-import {fetchPosts, votePost, deletePost} from '../../actions/posts';
-import {fetchComments} from '../../actions/comments';
+import { fetchPosts, votePost, deletePost } from '../../actions/posts';
+import { getComments } from '../../actions/comments';
 import { VOTE } from '../../constants';
 import {SortComments} from '../sort';
 import Comment from '../comments';
@@ -15,7 +15,7 @@ import './index.css';
 
 class PostDetail extends Component {
   componentDidMount () {
-    const {fetchPosts, fetchComments, posts, comments} = this.props;
+    const {fetchPosts, getComments, posts, comments} = this.props;
     const postID = this.getPostID();
 
     if (!posts || !posts.fetched) {
@@ -23,7 +23,7 @@ class PostDetail extends Component {
     }
 
     if (!comments || !comments.fetched || !comments.data[postID]) {
-      fetchComments(postID);
+      getComments(postID);
     }
   }
 
@@ -171,4 +171,4 @@ const mapStateToProps = ({comments, posts}) => {
   return { comments, posts };
 }
 
-export default connect(mapStateToProps, {fetchComments, fetchPosts, votePost, deletePost})(PostDetail);
+export default connect(mapStateToProps, { getComments, fetchPosts, votePost, deletePost })(PostDetail);

@@ -4,7 +4,7 @@ import { URL, AUTH } from '../constants';
 import { uuidv4 } from '../helpers';
 
 import {
-  FETCH_COMMENTS,
+  GET_COMMENTS,
   SORT_COMMENTS,
   DOWN_VOTE_COMMENT,
   UP_VOTE_COMMENT,
@@ -14,7 +14,7 @@ import {
   VOTE,
 } from '../constants';
 
-export function fetchComments (postID) {
+export function getComments (postID) {
   const url = `${URL}/posts/${postID}/comments`;
   const config = {
     headers: {'Authorization': AUTH}
@@ -31,7 +31,7 @@ export function fetchComments (postID) {
     })
 
   return {
-    type: FETCH_COMMENTS,
+    type: GET_COMMENTS,
     payload: request
   }
 }

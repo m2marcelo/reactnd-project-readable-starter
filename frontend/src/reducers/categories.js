@@ -1,4 +1,4 @@
-import { FETCH_CATEGORIES } from '../constants';
+import { GET_CATEGORIES } from '../constants';
 
 const initialState = {
   fetched: false
@@ -6,7 +6,7 @@ const initialState = {
 
 export default function (state = initialState, action) {
   switch (action.type) {
-  case FETCH_CATEGORIES:
+  case GET_CATEGORIES:
     return {
       ...state,
       fetched: true,
