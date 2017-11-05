@@ -1,8 +1,8 @@
 .Score {
   align-items: center;
-  display: flex;
   flex-direction: column;
-  left: 0;
+  left: auto;
+  margin-right: 1.0rem;
   position: absolute;
   top: 0;
   transform: translateX(-150%);
@@ -23,12 +23,10 @@
 .Score-button::after {
   content: '';
   display: block;
-  height: 0;
   left: 50%;
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: 0;
 }
 
 .Score-button--up {

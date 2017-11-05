@@ -21,7 +21,7 @@ const SortCommentsOptions = ({activeSort, sortComments}) => {
   return (
     <ul className='Sort'>
       <li key='plain' className='Sort-comments'>
-        Show comments order:
+        Show comments:
       </li>
 
       {buttons}

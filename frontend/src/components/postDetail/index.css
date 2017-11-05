@@ -5,7 +5,7 @@
 
 .Post-body {
   font-size: 2.4rem;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 .Post-meta {
@@ -19,9 +19,19 @@
 }
 
 .Post-links {
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 .Post-comments {
   font-size: 1.6rem;
+}
+
+.Post-comments-size {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+.Post-score {
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
 }

@@ -60,7 +60,7 @@ class PostDetail extends Component {
   }
 
   renderPost () {
-    const {posts} = this.props;
+    const {posts, comments} = this.props;
     const postID = this.getPostID();
     const category = this.getCategoryID();
     const post = posts.data[postID];
@@ -82,6 +82,9 @@ class PostDetail extends Component {
 
         <p className='Post-body'>{body}</p>
 
+        <div className='Post-score'>
+          Current score: { voteScore }
+        </div>
         <Score score={voteScore} voteUp={this.voteUp} voteDown={this.voteDown} />
       </div>
     );
@@ -110,6 +113,9 @@ class PostDetail extends Component {
     if (postComments.length > 0) {
       return (
         <div>
+          <div className='Post-comments-size'>
+            { postComments.length } comments
+          </div>
           <SortComments />
           <ul>
           {
