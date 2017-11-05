@@ -27,6 +27,12 @@ const PostItem = (props) => {
         </Link>
       </h2>
 
+      <div className='Post-links'>
+        <Link className='Link' to={`/${category}/${id}/edit`}>
+          Edit post
+        </Link>
+      </div>
+
       <div className='PostItem-meta'>
         <div>
           Submitted by <span className='PostItem-author'>{author}</span>, {format(timestamp, 'D MMM YYYY')}
